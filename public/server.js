@@ -8,7 +8,7 @@ cache = "?v=" + new Date().getTime();
 */
 
 /* SERVER */
-
+var localhost = /\d+\.\d+\.\d+\.\d/.test(location.hostname) ? location.hostname : "localhost";
 const SERVER = {
     public: "//rsn.me2designer.com/public",
     fonts: "//rsn.me2designer.com/fonts",
