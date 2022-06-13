@@ -9,6 +9,7 @@ cache = "?v=" + new Date().getTime();
 
 /* SERVER */
 var localhost = /\d+\.\d+\.\d+\.\d/.test(location.hostname) ? location.hostname : "localhost";
+console.log((/\d+\.\d+\.\d+\.\d/ || /rsn.me2designer.com/).test(location.hostname));
 const SERVER = {
     public: "//rsn.me2designer.com/public",
     fonts: "//rsn.me2designer.com/fonts",
