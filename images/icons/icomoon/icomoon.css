@@ -3,9 +3,9 @@
 
 @font-face {
     font-family: "Icomoon";
-    src: url("/fonts/Icomoon/Icomoon.eot?5de3pc");
-    src: url("/fonts/Icomoon/Icomoon.eot?5de3pc#iefix") format("embedded-opentype"), url("/fonts/Icomoon/Icomoon.ttf?5de3pc") format("truetype"),
-        url("/fonts/Icomoon/Icomoon.woff?5de3pc") format("woff"), url("/fonts/Icomoon/Icomoon.svg?5de3pc#Icomoon") format("svg");
+    src: url("/fonts/Icomoon/Icomoon.eot");
+    src: url("/fonts/Icomoon/Icomoon.eot#iefix") format("embedded-opentype"), url("/fonts/Icomoon/Icomoon.ttf") format("truetype"),
+        url("/fonts/Icomoon/Icomoon.woff") format("woff"), url("/fonts/Icomoon/Icomoon.svg#Icomoon") format("svg");
     font-weight: normal;
     font-style: normal;
 }
