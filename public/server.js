@@ -1,6 +1,6 @@
 /*  cache */
 
-let cache;
+var cache;
 cache = "?v=" + new Date().getTime();
 
 /*
@@ -8,11 +8,14 @@ cache = "?v=" + new Date().getTime();
 */
 
 /* SERVER */
-var localhost = /\d+\.\d+\.\d+\.\d/.test(location.hostname) ? location.hostname : "localhost";
-const SERVER = {
+var localhost = /\d+\.\d+\.\d+\.\d/.test(location.hostname);
+var liveServer = /^design.realsn.com/.test(location.hostname);
+var SERVER = {
     public: "//rsn.me2designer.com/public",
     fonts: "//rsn.me2designer.com/fonts",
     images: "//rsn.me2designer.com/images",
+    asset: "",
+    view: "",
 };
 
 /*
@@ -33,14 +36,14 @@ const SERVER = {
 
 */
 
-let FILES_CSS, FILES_JS;
-const FILES = function (fileList, callback) {
-    let result;
+var FILES_CSS, FILES_JS;
+var FILES = function (fileList, callback) {
+    var result;
 
     function isOverlap(list, filePath) {
-        let value;
+        var value;
 
-        for (let i = 0; i < list.length; i++) {
+        for (var i = 0; i < list.length; i++) {
             if (list[i] == filePath) {
                 value = true;
                 break;
@@ -50,18 +53,18 @@ const FILES = function (fileList, callback) {
     }
 
     function afterJqLoad() {
-        let _result;
-        let CSS = [];
-        let JS = [];
+        var _result;
+        var CSS = [];
+        var JS = [];
 
         if (Array.isArray(fileList)) {
             fileList.forEach(function (v, i, a) {
-                let isJS = /\.js/.test(v);
+                var isJS = /\.js/.test(v);
 
                 isJS ? JS.push(v) : CSS.push(v);
             });
         } else {
-            let isJS = /\.js/.test(fileList);
+            var isJS = /\.js/.test(fileList);
 
             isJS ? JS.push(fileList) : CSS.push(fileList);
         }
@@ -69,11 +72,11 @@ const FILES = function (fileList, callback) {
         CSS.forEach(function (v, i, a) {
             if (!FILES_CSS) FILES_CSS = [];
 
-            let filePath = CSS[i];
+            var filePath = CSS[i];
 
             if (!isOverlap(FILES_CSS, filePath)) {
-                let head = document.getElementsByTagName("head")[0];
-                let tag = document.createElement("link");
+                var head = document.getElementsByTagName("head")[0];
+                var tag = document.createElement("link");
 
                 tag.rel = "stylesheet";
                 tag.type = "text/css";
@@ -88,10 +91,10 @@ const FILES = function (fileList, callback) {
             (function getJS(i) {
                 if (!FILES_JS) FILES_JS = [];
 
-                let filePath = JS[i];
+                var filePath = JS[i];
 
                 if (!isOverlap(FILES_JS, filePath)) {
-                    let _cache = /\?/.test(filePath) ? "" : cache;
+                    var _cache = /\?/.test(filePath) ? "" : cache;
 
                     $.getScript(filePath + _cache)
                         .done(function () {
@@ -127,7 +130,7 @@ const FILES = function (fileList, callback) {
     }
 
     if (/undefined/i.test(typeof jQuery)) {
-        let xml = new XMLHttpRequest();
+        var xml = new XMLHttpRequest();
 
         xml.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
