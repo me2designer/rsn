@@ -7,6 +7,15 @@ cache = "?v=" + new Date().getTime();
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 
+var HOST = {
+    localhost: /\d+\.\d+\.\d+\.\d/.test(location.hostname),
+    publish: /^design.realsn.com/.test(location.hostname),
+};
+
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+
 /* SERVER */
 var SERVER = {
     public: "//rsn.me2designer.com/public",
@@ -14,8 +23,6 @@ var SERVER = {
     images: "//rsn.me2designer.com/images",
     asset: "",
     view: "",
-    localhost: /\d+\.\d+\.\d+\.\d/.test(location.hostname),
-    publish: /^design.realsn.com/.test(location.hostname),
 };
 
 /*
