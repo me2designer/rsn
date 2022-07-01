@@ -28,7 +28,8 @@ textarea {resize:none}
 /****************************************************************************
     hack
 ****************************************************************************/
-_:-ms-fullscreen, :root button {overflow:visible} /* Only works in IE10 이상 (IE11도 포함)*/
+/* Only works in IE10 이상 (IE11도 포함)*/
+_:-ms-fullscreen, :root button {overflow:visible} 
 input::-webkit-input-placeholder {color:#a9a9a9;}
 input:-ms-input-placeholder {color:#a9a9a9;}
 textarea::-webkit-input-placeholder {color:#a9a9a9;}
@@ -42,4 +43,16 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {-webkit-text-fill-color: inherit !important; -webkit-box-shadow: 0 0 0 100vw #ffffff inset;} 
-input, select, textarea, button, a, label { -webkit-tap-highlight-color: transparent; } /* Mobile Touch 후 깜빡임 제거 */
+
+/* Mobile Touch 후 깜빡임 제거 */
+input, select, textarea, button, a, label { -webkit-tap-highlight-color: transparent; } 
+
+/* input 초기화 버튼 hidden - IE의 경우 */
+input::-ms-clear,
+input::-ms-reveal{ display:none; }
+
+/* input 초기화 버튼 hidden - 크롬의 경우 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{ display:none; }
