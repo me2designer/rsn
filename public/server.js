@@ -8,8 +8,8 @@ cache = "?v=" + new Date().getTime();
 */
 
 /* SERVER */
-var localhost = /\d+\.\d+\.\d+\.\d/.test(location.hostname);
-var liveServer = /^design.realsn.com/.test(location.hostname);
+var LOCALHOST = /\d+\.\d+\.\d+\.\d/.test(location.hostname);
+var PUBLISH = /^design.realsn.com/.test(location.hostname);
 var SERVER = {
     public: "//rsn.me2designer.com/public",
     fonts: "//rsn.me2designer.com/fonts",
