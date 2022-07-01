@@ -42,3 +42,4 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {-webkit-text-fill-color: inherit !important; -webkit-box-shadow: 0 0 0 100vw #ffffff inset;} 
+input, select, textarea, button, a, label { -webkit-tap-highlight-color: transparent; } /* Mobile Touch 후 깜빡임 제거 */
