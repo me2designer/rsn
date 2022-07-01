@@ -1,6 +1,6 @@
 /*  cache */
 
-const cache;
+var cache;
 cache = "?v=" + new Date().getTime();
 
 /*
@@ -8,14 +8,14 @@ cache = "?v=" + new Date().getTime();
 */
 
 /* SERVER */
-const SERVER = {
+var SERVER = {
     public: "//rsn.me2designer.com/public",
     fonts: "//rsn.me2designer.com/fonts",
     images: "//rsn.me2designer.com/images",
     asset: "",
     view: "",
     localhost: /\d+\.\d+\.\d+\.\d/.test(location.hostname),
-    publish: /^design.realsn.com/.test(location.hostname)
+    publish: /^design.realsn.com/.test(location.hostname),
 };
 
 /*
